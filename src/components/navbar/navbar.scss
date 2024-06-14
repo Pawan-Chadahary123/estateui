@@ -1,0 +1,127 @@
+@import "../../responsive.scss";
+
+nav{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    a{
+        transition: all 0.3s ease;
+        
+        &:hover{
+            scale:1.03;
+
+        }
+
+        @include sm{
+            display: none;
+        }
+    }
+
+    .left{
+        flex: 3.25;
+        display: flex;
+        align-items: center;
+        gap: 45px;
+        
+
+        .logo{
+            font-weight: bold;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            img{
+                width: 25px;
+
+            }
+
+
+            span{
+                @include md{
+                    display: none;
+                }
+
+                @include sm{
+                    display: initial;
+                }
+            }
+
+           
+
+
+        }
+    }
+
+    .right{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fcf5f3;
+        height: 100vh;
+
+
+        @include md{
+            background-color: transparent;
+
+        }
+
+        a{
+            padding: 10px 20px;
+            margin: 18px;
+
+        }
+
+        .register{
+            background-color: #fece51;
+        }
+
+        .menuIcon{
+            display: none;
+            z-index: 999;
+
+            @include sm{
+                display: initial;
+            }
+
+            img{
+                width: 35px;
+                height: 35px;
+                cursor: pointer ;
+            }
+        }
+
+       
+
+        .menu{
+            position: absolute;
+            top: 0;
+            right: -50%;
+
+            background-color: black;
+            color: white;
+            height: 100vh;
+            width: 50%;
+            transition: all 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+
+            &.active{
+                right: 0;
+            }
+
+            a{
+                display: initial;
+            }
+        }
+        
+    }
+
+}
